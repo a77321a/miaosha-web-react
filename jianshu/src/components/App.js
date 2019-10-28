@@ -3,7 +3,7 @@
  * @Author: 辛顺宁
  * @Date: 2019-08-15 11:29:33
  * @LastEditors: 辛顺宁
- * @LastEditTime: 2019-10-25 17:23:22
+ * @LastEditTime: 2019-10-28 17:32:36
  */
 import React, { Component, Fragment } from 'react';
 import { Button } from 'element-react';
@@ -11,7 +11,6 @@ import '../common/style.css'
 import { CHANGE_VALUE } from '../store/actionTypes'
 import { getChangeValue } from '../store/actionCreator'
 import store from '../store'
-import axios from 'axios'
 
 // pureComponent
 class App extends Component {
@@ -22,16 +21,13 @@ class App extends Component {
     store.subscribe(() => { this.setState(store.getState()) })
   }
   componentDidMount () {
-    axios.get('http://neixun21.admin.baijiayun.com/api/statisticexam').then((res) => {
-      const action = getChangeValue(res)
-      console.log(action)
-      store.dispatch(action)
-    })
+    const action = getChangeValue()
+    store.dispatch(action)
   }
   render () {
     return (
       <Fragment>
-        <div>{this.state.show.statusText}</div>
+        <div>{this.state.show}</div>
         <Button onClick={this.toggleBtn} type='primary'>toggle</Button>
       </Fragment>
     )
