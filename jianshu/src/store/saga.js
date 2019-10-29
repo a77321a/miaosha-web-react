@@ -3,7 +3,7 @@
  * @Author: 辛顺宁
  * @Date: 2019-10-28 15:51:55
  * @LastEditors: 辛顺宁
- * @LastEditTime: 2019-10-28 17:37:00
+ * @LastEditTime: 2019-10-29 09:04:46
  */
 import axios from 'axios'
 
@@ -27,3 +27,4 @@ function* saga () {
 }
 
 export default saga
+
