@@ -1,2 +1,0 @@
-# all-react
-react jianshu
