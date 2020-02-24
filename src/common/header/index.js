@@ -3,11 +3,25 @@
  * @Author: 
  * @Date: 2020-01-17 15:30:14
  * @LastEditors  : Please set LastEditors
- * @LastEditTime : 2020-01-17 17:00:36
+ * @LastEditTime : 2020-01-17 17:49:40
  */
 import React from 'react'
 import { HeaderWrap, Logo, Nav, NavItem, SearchInput, Addition, Button, SearchWrap } from './style'
 class Header extends React.Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      focused: false
+    }
+    this.handleInputFocus = this.handleInputFocus.bind(this)
+  }
+  handleInputFocus (boo) {
+    console.log(boo)
+    this.setState({
+      focused: true
+    })
+  }
   render () {
     return (
       <HeaderWrap>
@@ -16,8 +30,10 @@ class Header extends React.Component {
           <NavItem className="left active">首页</NavItem>
           <NavItem className="left">下载APP</NavItem>
           <SearchWrap>
-            <SearchInput></SearchInput>
-            <i className="iconfont">&#xe637;</i>
+            <SearchInput
+              onFocus={this.handleInputFocus}
+              className={this.state.focused ? 'focused' : ''}></SearchInput>
+            <i className={this.state.focused ? 'focused iconfont' : 'iconfont'} >&#xe637;</i>
           </SearchWrap>
 
           <NavItem className="right">登录</NavItem>

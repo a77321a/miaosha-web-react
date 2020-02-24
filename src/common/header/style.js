@@ -3,7 +3,7 @@
  * @Author: 
  * @Date: 2020-01-17 15:34:14
  * @LastEditors  : Please set LastEditors
- * @LastEditTime : 2020-01-17 17:08:15
+ * @LastEditTime : 2020-01-17 17:46:42
  */
 import styled from 'styled-components'
 import logoPic from '../images/logo.png'
@@ -52,20 +52,26 @@ export const SearchWrap = styled.div`
     display:inline-block;
     position:absolute;
     right:5px;
-    bottom:5px;
+    bottom:3px;
     width:30px;
     border-radius:50%;
     text-align:center;
     line-height:30px;
+    transtion: all .3s easy;
+    &.focused{
+      transtion: all .3s easy;
+      color:#fff;
+      background:#777;
+    }
   }
 `
 export const SearchInput = styled.input.attrs({
   placeholder: '搜索'
 })`
     padding: 0 40px 0 20px;
-    width: 160px;
-    height: 38px;
-    margin-top:7px;
+    width: 120px;
+    height: 34px;
+    margin-top: 9px;
     font-size: 14px;
     border: 1px solid #eee;
     border-radius: 40px;
@@ -74,6 +80,11 @@ export const SearchInput = styled.input.attrs({
     line-height: 56px;
     font-size:14px;
     margin-left:20px;
+    transtion: width .3s easy;
+    &.focused{
+      width:160px;
+      transtion: width .3s easy;
+    }
 `
 export const Addition = styled.div`
   float:right;
