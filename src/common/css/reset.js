@@ -1,3 +1,10 @@
+/*
+ * @Descripttion: 
+ * @Author: 
+ * @Date: 2020-02-26 13:42:27
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-02-29 17:52:24
+ */
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
@@ -21,13 +28,19 @@ const GlobalStyle = createGlobalStyle`
     font: inherit;
     vertical-align: baseline;
   }
+  
   /* HTML5 display-role reset for older browsers */
   article, aside, details, figcaption, figure, 
   footer, header, hgroup, menu, nav, section {
     display: block;
   }
-  body {
+  html,body {
+    height:100%;
+    width:100%;
     line-height: 1;
+    font-family:tahoma, arial, "Microsoft YaHei", simsun;
+  }
+  body{
   }
   ol, ul {
     list-style: none;
@@ -46,6 +59,3 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 export default GlobalStyle
-//   .dell{
-//   background: red
-// }
