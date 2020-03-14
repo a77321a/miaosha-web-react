@@ -17,6 +17,9 @@ const BodyMiddle = styled.div`
 `
 function App(props) {
   let { location } = props
+  if (location.pathname == '/') {
+    props.history.push('/login')
+  }
   // let { userInfo } = localStorage
   // if (JSON.parse(userInfo).code == 200) {
   //   props.history.push('/goods')

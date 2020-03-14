@@ -81,7 +81,8 @@ function get (url, params = {}, loading = true) {
       params: params,
       loading,
       headers: {
-        withCredentials: true
+        withCredentials: true,
+        Authorization: localStorage.token
       }
     })
       .then(response => {
@@ -103,7 +104,8 @@ function post (url, data = {}, loading = false) {
       loading: loading,
       xhrFields: { withCredentials: true },
       headers: {
-        withCredentials: true
+        withCredentials: true,
+        Authorization: localStorage.token
       }
     })
       .then(response => {
@@ -133,7 +135,8 @@ function postForm (url, formData, loading = true) {
       timeout: 0,
       loading,
       headers: {
-        'Content-Type': 'multipart/form-data'
+        'Content-Type': 'multipart/form-data',
+        Authorization: localStorage.token
       }
     })
       .then(response => {
@@ -149,6 +152,7 @@ function put (url, data = {}) {
   return new Promise((resolve, reject) => {
     axios.put(url, data, {
       headers: {
+        Authorization: localStorage.token
       }
     })
       .then(response => {
@@ -175,8 +179,10 @@ function todelete (url, params = {}) {
 // Vue.prototype.$screen = buildConfig.screen
 axios.defaults.timeout = 0
 axios.defaults.withCredentials = true
-axios.defaults.baseURL = 'http://localhost:8888/'
-axios.defaults.headers.Authorization = ''
-// axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8'
+axios.defaults.baseURL = 'http://localhost:8888/api/'
+// axios.defaults.baseURL = '/api/'
+
+axios.defaults.headers.Authorization = localStorage.token
+axios.defaults.headers['token'] = localStorage.token
 
 export default { get, post, patch, put, todelete, postForm }

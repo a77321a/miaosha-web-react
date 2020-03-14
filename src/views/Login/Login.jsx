@@ -7,18 +7,15 @@ const Login = props => {
   const [mobile, setMobile] = useState(18661415132)
   const [password, setPassword] = useState(123456)
   const history = useHistory()
-
+  localStorage.clear()
   const login = () => {
     api.loginApi({ mobile: mobile, password: password }).then(res => {
       if (res.code === 200) {
-        localStorage.setItem('userInfo', JSON.stringify(res))
+        localStorage.setItem('token', res.data)
         history.push('/goods')
       }
     })
   }
-
-  React.useEffect(() => {}, [])
-
   return (
     <Fragment>
       <Logo>LOGO</Logo>

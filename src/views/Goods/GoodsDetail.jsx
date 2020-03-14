@@ -37,13 +37,15 @@ function GoodsDetail(props) {
   }
 
   const clickBuy = val => {
-    createOrder({ goodsId: id, amount: 1 }).then(res => {
-      if (res.code == 200) {
-        Toast.success('Load success !!!', 3, () => {
-          getGoodsDetail()
-        })
+    createOrder({ goodsId: id, amount: 1, promoId: goodsInfo.promoId }).then(
+      res => {
+        if (res.code == 200) {
+          Toast.success('Load success !!!', 3, () => {
+            getGoodsDetail()
+          })
+        }
       }
-    })
+    )
   }
 
   return (

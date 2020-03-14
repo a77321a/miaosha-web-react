@@ -30,7 +30,7 @@ const BasicRoute = props => {
     </App>
   )
   return (
-    <Router>
+    <Router basename="/resources/">
       {/* <IndexRoute></IndexRoute> */}
       <Switch>
         <Route path="/" render={props => AppRouter}></Route>
