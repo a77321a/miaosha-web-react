@@ -180,6 +180,8 @@ function todelete (url, params = {}) {
 axios.defaults.timeout = 0
 axios.defaults.withCredentials = true
 axios.defaults.baseURL = 'http://localhost:8888/api/'
+// axios.defaults.baseURL = 'http://118.178.226.42/api/'
+
 // axios.defaults.baseURL = '/api/'
 
 axios.defaults.headers.Authorization = localStorage.token
